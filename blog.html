@@ -7,11 +7,39 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+          
+           
+            main: '#B4F461',
+           
+                          
+          },
+          fontFamily: {
+            fontMain: ['Lexend'],
+          }
+        }
+      }
+    }
+  </script>
+
+
 </head>
-<body>
+<body class="font-fontMain">
     <div class=" bg-[#F9F7F3] ">
         <nav class="flex justify-between container mx-auto py-6">
-            <button class="bg-[#B4F461] rounded-md  px-6 py-2 font-bold">Home</button>
+            <a href="./index.html">
+              <button class="bg-main rounded-md  px-6 py-2 font-bold">Home</button>
+            </a>
             <div class="flex space-x-3">
                 <img class="h-8" src="./assets/logo.png" alt="">
                 <h2 class="font-bold text-lg">Donate Bangladesh</h2>
@@ -24,8 +52,8 @@
         </nav>
        </div>
        <!-- FAQ -->
-       <div class="container mx-auto mt-10">
-        <h1 class="text-3xl font-bold mb-8">Important FAQ</h1>
+       <div class="container mx-auto mt-10 px-4">
+        <h1 class="text-3xl font-bold mb-8 ">Important FAQ</h1>
 
     <div class="join join-vertical w-full space-y-8">
   <div class="collapse collapse-arrow join-item border-base-300 border">
@@ -63,7 +91,19 @@
     <div class="collapse-title text-xl font-bold">How do you manipulate an elements attributes and style using the DOM? 
 </div>
     <div class="collapse-content">
-      <p>hello</p>
+      <p>To manipulate an element's attributes and style using the DOM in JavaScript, I follow these key methods: <br>
+        Manipulating Attributes: <br>
+        1. getAttribute(attributeName): Retrieves the value of an attribute. <br>
+        2. setAttribute(attributeName, value): Sets a new value for an attribute. <br>
+        3. removeAttribute(attributeName): Removes an attribute. <br> <br>
+        Manipulating Styles: <br>
+        1. classList.add("className"): Adds a class. <br>
+        2. classList.remove("className"): Removes a class. <br>
+         3. classList.toggle("className"): Toggles a class.
+
+
+
+      </p>
     </div>
   </div>
 </div>

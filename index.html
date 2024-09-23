@@ -20,8 +20,8 @@
         extend: {
           colors: {
           
-            main: '#B4F461',
            
+            main: '#B4F461',
            
                           
           },
@@ -39,11 +39,13 @@
   <header id="navbar" class="sticky top-0 z-10 bg-transparent backdrop-filter backdrop-blur-lg">
     
     <div class=" bg-[#F9F7F3] ">
-      <nav class="flex justify-between container mx-auto py-6">
-        <button class="bg-main rounded-md  px-6 py-2 font-bold">Blog</button>
-        <div class="flex space-x-3">
+      <nav class="flex justify-between  lg:container mx-auto py-6 px-4">
+       <a href="./blog.html">
+        <button class="bg-main rounded-md px-4 lg:px-6 py-2 font-bold">Blog</button>
+       </a>
+        <div class="flex space-x-3 ">
           <img class="h-8" src="./assets/logo.png" alt="">
-          <h2 class="font-bold text-lg">Donate Bangladesh</h2>
+          <h2 class="font-bold text-lg ">Donate Bangladesh</h2>
         </div>
         
         <div class="flex space-x-3">
@@ -55,26 +57,27 @@
     
     <div class="mt-16 pb-5 text-center space-x-4">
       <button id="donation-btn" class="py-3 px-5 font-bold rounded-md bg-main">Donation</button>
-      <button id="History-btn" class="py-2 px-5 border-2 font-bold text-gray-500 rounded-md ">History</button>
+      <button id="History-btn" class="py-3 px-5 border-2 font-bold text-gray-500 rounded-md ">History</button>
     </div>
   </header>
   <main class="container mx-auto mt-8">
+    
     <!-- first card -->
     <div class="max-w-5xl mx-auto p-4 ">
       
-      <div class="bg-white border  rounded-lg  flex ">
+      <div class="bg-white border  rounded-lg shadow-md flex flex-col md:flex-row">
         
         <div class="">
           <img  class="w-full h-full  p-5 rounded-md" src="./assets/noakhali.png" alt=""/>
         </div>
         
         
-        <div class="w-3/5 p-6 flex flex-col justify-between">
+        <div class="lg:w-3/5 p-6 flex flex-col justify-between">
           
           <div>
             <div class="flex items-center mb-3 space-x-2">
               <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6">
-              <h2  class="text-gray-700 font-semibold text-lg"><span id="noakhali-blance">00</span> BDT</h2>
+              <h2 class="text-gray-700 font-semibold text-lg"><span id="noakhali-blance">00</span> BDT</h2>
             </div>
             <h1 class="text-xl font-bold text-gray-900 mb-2">
               Donate for Flood at Noakhali, Bangladesh
@@ -90,24 +93,22 @@
           
           <div class="mt-2">
             <input id="donate-noakhali" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
-
             <button id="donate-btn-nk" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
           </div>
         </div>
       </div>
     </div>
-    
     <!-- second card -->
     <div class="max-w-5xl mx-auto p-4 ">
       
-      <div class="bg-white border  rounded-lg shadow-md flex ">
+      <div class="bg-white border  rounded-lg shadow-md flex flex-col md:flex-row">
         
         <div class="">
           <img  class="w-full h-full  p-5 rounded-md" src="./assets/feni.png" alt=""/>
         </div>
         
         
-        <div class="w-3/5 p-6 flex flex-col justify-between">
+        <div class="lg:w-3/5 p-6 flex flex-col justify-between">
           
           <div>
             <div class="flex items-center mb-3 space-x-2">
@@ -134,14 +135,14 @@
     <!-- 3rd card -->
     <div class="max-w-5xl mx-auto p-4 ">
       
-      <div class="bg-white border  rounded-lg shadow-md flex ">
+      <div class="bg-white border  rounded-lg shadow-md flex flex-col md:flex-row">
         
         <div class="">
           <img  class="w-full h-full  p-5 rounded-md" src="./assets/quota-protest.png" alt=""/>
         </div>
         
         
-        <div class="w-3/5 p-6 flex flex-col justify-between">
+        <div class="lg:w-3/5 p-6 flex flex-col justify-between">
           
           <div>
             <div class="flex items-center mb-3 space-x-2">
@@ -164,11 +165,16 @@
         </div>
       </div>
     </div>
-    
-    
-    
-    
+
   </main>
+
+  <footer>
+    <div class="bg-[#F9F7F3] h-24 mt-10"></div>
+  </footer>
+
+ 
+  
+
   <script src="./index.js"></script>
 </body>
 </html>
