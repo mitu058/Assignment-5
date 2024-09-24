@@ -36,21 +36,21 @@
   
 </head>
 <body class="font-fontMain">
-  <header id="navbar" class="sticky top-0 z-10 bg-transparent backdrop-filter backdrop-blur-lg">
-    
+  <!-- <header class="sticky top-0 z-10 bg-transparent backdrop-filter backdrop-blur-lg"> -->
+    <header class="sticky top-0  backdrop-blur-xl bg-transparent backdrop-filte">         
     <div class=" bg-[#F9F7F3] ">
       <nav class="flex justify-between  lg:container mx-auto py-6 px-4">
-       <a href="./blog.html">
-        <button class="bg-main rounded-md px-4 lg:px-6 py-2 font-bold">Blog</button>
-       </a>
+       <!-- <a href="./blog.html"> -->
+        <button id="btn-blog" class="bg-main rounded-md px-4 lg:px-6 py-2 font-bold">Blog</button>
+       <!-- </a> -->
         <div class="flex space-x-3 ">
           <img class="h-8" src="./assets/logo.png" alt="">
-          <h2 class="font-bold text-lg ">Donate Bangladesh</h2>
+          <h2 class="font-bold text-xl lg:block hidden ">Donate Bangladesh</h2>
         </div>
         
         <div class="flex space-x-3">
           <img class="h-6" src="./assets/coin.png" alt="">
-          <h2  class="font-bold text-base text-gray-500"><span id="initial-balance">5500</span> BDT</h2>
+          <h2  class="font-bold text-lg text-gray-500"><span id="balance">5500</span> BDT</h2>
         </div>
       </nav>
     </div>
@@ -77,9 +77,9 @@
           <div>
             <div class="flex items-center mb-3 space-x-2">
               <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6">
-              <h2 class="text-gray-700 font-semibold text-lg"><span id="noakhali-blance">00</span> BDT</h2>
+              <h2 class="text-gray-700 font-semibold text-lg"><span id="first-donation">00</span> BDT</h2>
             </div>
-            <h1 class="text-xl font-bold text-gray-900 mb-2">
+            <h1 id="first-title" class="text-xl font-bold text-gray-900 mb-2">
               Donate for Flood at Noakhali, Bangladesh
             </h1>
             <p class="text-gray-600 text-sm mb-0">
@@ -89,11 +89,9 @@
               and making a positive impact on the lives of those in need.
             </p>
           </div>
-          
-          
           <div class="mt-2">
-            <input id="donate-noakhali" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
-            <button id="donate-btn-nk" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
+            <input id="first-input" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
+            <button id="first-btn" class="w-full py-2 bg-main rounded-md font-bold">Donate Now</button>
           </div>
         </div>
       </div>
@@ -113,9 +111,9 @@
           <div>
             <div class="flex items-center mb-3 space-x-2">
               <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6">
-              <h2 class="text-gray-700 font-semibold text-lg"><span id="feni-balance">00</span> BDT</h2>
+              <h2 class="text-gray-700 font-semibold text-lg"><span id="second-donation">00</span> BDT</h2>
             </div>
-            <h1 class="text-xl font-bold text-gray-900 mb-2">
+            <h1 id="second-title" class="text-xl font-bold text-gray-900 mb-2">
               Donate for Flood Relief in Feni,Bangladesh
             </h1>
             <p class="text-gray-600 text-sm mb-0">
@@ -125,8 +123,8 @@
           
           
           <div class="mt-2">
-            <input id="donate-feni" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
-            <button id="donate-btn-feni" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
+            <input id="second-input" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
+            <button id="second-btn" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
           </div>
         </div>
       </div>
@@ -147,9 +145,9 @@
           <div>
             <div class="flex items-center mb-3 space-x-2">
               <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6">
-              <h2 class="text-gray-700 font-semibold text-lg"><span id="quota-blance">00</span> BDT</h2>
+              <h2 class="text-gray-700 font-semibold text-lg"><span id="third-donation">00</span> BDT</h2>
             </div>
-            <h1 class="text-xl font-bold text-gray-900 mb-2">
+            <h1 id="third-title" class="text-xl font-bold text-gray-900 mb-2">
               Aid for Injured in the Quota Movement
             </h1>
             <p class="text-gray-600 text-sm mb-0">
@@ -159,29 +157,40 @@
           
           
           <div class="mt-2">
-            <input id="donate-quota" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
-            <button id="donate-btn-quota" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
+            <input id="third-input" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-5  focus:outline-none " type="text" id="" placeholder="Write Donation Amount">
+            <button id="third-btn" class="w-full py-2 bg-main rounded-md font-bold ">Donate Now</button>
           </div>
         </div>
       </div>
     </div>
 
+  <!-- Modal -->
+
+  <dialog id="confirmation-Modal" class="modal">
+    <div class="modal-box flex justify-center flex-col items-center space-y-3">
+      <h3 class="text-2xl font-bold">Congrates !</h3>
+      <img class="w-[40px]" src="./assets/coin.png" alt="">
+      <p class="py-3">You Have Donated for Humankind</p>
+      <h3 class="text-lg font-bold">Successfully</h3>
+      <div class="modal-action">
+        <form method="dialog">
+          <button id="close-modal" class="btn">close confirmation</button>
+        </form>
+          </div>
+           </div>
   </main>
   
-<div id="history-section" class="hidden">
-  <div id="history-container" class="max-w-5xl mx-auto p-4">
-    <!-- History items will be dynamically inserted here -->
+
+  <div id="history-container" class="max-w-5xl mx-auto p-4 hidden">
   </div>
-</div>
+
 
   <footer id="footer">
     <div class="bg-[#F9F7F3] h-24 mt-10"></div>
   </footer>
 
- 
-  
 
-  <script src="./index.js"></script>
-   
+
+   <script src="./index.js"></script>
 </body>
 </html>
