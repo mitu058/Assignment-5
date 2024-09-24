@@ -1,49 +1,46 @@
 
-// function getInputValueById(id){
-//     return parseFloat(document.getElementById(id))
-//   }
+function convertNumber(id) {
+    const inputValue = document.getElementById(id).value;
+    const convertToNumber = parseFloat(inputValue);
+    return convertToNumber;
+}
 
+function calculateDonation(balance, donationInput, donationCount, title) {
+    const Balance = parseFloat(document.getElementById(balance).innerText);
+    const firstDonate = convertNumber(donationInput);
+    const donationUpdate = parseFloat(document.getElementById(donationCount).innerText);
 
-function calculateDonation(balance,donationInput, donationCount, title){
+    const donationPriceValid = document.getElementById(donationInput).value.trim();
+    const validNumber = /^\d+(\.\d+)?$/.test(donationPriceValid);
 
-    // const Balance = getInputValueById(balance).innerText
-    // const firstDonate = getInputValueById(donationInput).value
-    // const donationUpdate = getInputValueById(donationCount).innerText
+    document.getElementById(donationInput).value = "";
 
-    const Balance = parseFloat(document.getElementById(balance).innerText)
-    const firstDonate = parseFloat(document.getElementById(donationInput).value);
-    const donationUpdate = parseFloat(document.getElementById(donationCount).innerText)
-    
-    document.getElementById(donationInput).value = ""
-
-    if((!isNaN(firstDonate) && firstDonate > 0 && firstDonate <= Balance)){
+    if (!isNaN(firstDonate) && firstDonate > 0 && firstDonate <= Balance && validNumber) {
         const firstBalance = document.getElementById(donationCount);
         const updatedDonationBalance = donationUpdate + firstDonate;
-        firstBalance.innerText = updatedDonationBalance;
-        const newBalance = Balance - firstDonate
-        const initialBlance = document.getElementById(balance)
-        initialBlance.innerText = newBalance
+        firstBalance.innerText = updatedDonationBalance.toFixed(2);
 
-        // History
+        const newBalance = Balance - firstDonate;
+        const initialBalance = document.getElementById(balance);
+        initialBalance.innerText = newBalance.toFixed(2);
+
         const title1 = document.getElementById(title).innerText;
-        const historyDiv = document.getElementById("history-container")
-        const history = document.createElement('div')
-        history.innerHTML +=`
+        const historyDiv = document.getElementById("history-container");
+        const history = document.createElement('div');
+        history.innerHTML = `
         <div class="border-2 p-5 rounded-xl mt-4 space-y-3">
-        <h1 class="font-bold text-lg">${firstDonate.toFixed(2)} Taka ${title1}</h1>
-        <p>${new Date().toString()}</p>
+            <h1 class="font-bold text-lg">${firstDonate.toFixed(2)} Taka ${title1}</h1>
+            <p>${new Date().toString()}</p>
         </div>
-        `
-        historyDiv.insertBefore(history, historyDiv.firstChild)
-          
-        // modal
-        document.getElementById("confirmation-Modal").showModal()
-    }
+        `;
+        historyDiv.insertBefore(history, historyDiv.firstChild);
 
-    else{
-        alert("Invalid donation amount")
+        document.getElementById("confirmation-Modal").showModal();
+    } else {
+        alert("Invalid donation amount");
     }
 }
+
 
 document.getElementById("close-modal").addEventListener('click',function(){
     document.getElementById("confirmation-Modal").close();
@@ -64,8 +61,6 @@ document.getElementById('third-btn').addEventListener('click',function(){
     calculateDonation('balance','third-input','third-donation','third-title')
 })
 
-
-
 // button functionality
 const donationButton = document.getElementById("donation-btn")
 const histroyButton = document.getElementById("History-btn")
@@ -79,9 +74,7 @@ histroyButton.addEventListener('click',function(){
 donationButton.classList.add("text-gray-500","border-2")
 
 document.getElementById("donation-section").classList.add("hidden")
-  document.getElementById("history-container").classList.remove("hidden")
-
-  
+  document.getElementById("history-container").classList.remove("hidden") 
 })
 
 donationButton.addEventListener('click', function () {
@@ -100,6 +93,3 @@ donationButton.addEventListener('click', function () {
 document.getElementById("btn-blog").addEventListener('click',function(){
     window.location.href = "./blog.html"
 })
-
-
-
